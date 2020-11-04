@@ -73,6 +73,13 @@
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>2.0.1</version>
         </dependency>
+
+        <!--flyway-->
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>6.5.7</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -80,6 +87,20 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>6.5.7</version>
+                <configuration>
+                    <url>jdbc:mysql://127.0.0.1:3306/community?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=Asia/Shanghai</url>
+                    <user>root</user>
+                    <password>root</password>
+                    <driver>com.mysql.cj.jdbc.Driver</driver>
+                    <schemas>
+                        <schema>community</schema>
+                    </schemas>
+                </configuration>
             </plugin>
         </plugins>
     </build>
