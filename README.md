@@ -16,4 +16,27 @@
 ## 工具
 [Git](https://git-scm.com/download)
 
-[Visual Paradigm](https://www.visual-paradigm.com) 
+[Visual Paradigm](https://www.visual-paradigm.com)
+
+[Flyway](https://flywaydb.org/documentation/) 
+
+## 脚本
+V1__Create_user_table.sql
+```sql
+use community;
+create table user (
+    id int auto_increment primary key not null,
+    account_id varchar(100),
+    name varchar(50),
+    token varchar(36),
+    time_create datetime,
+    time_modified datetime                 
+) character set = utf8;
+```
+V2__Add_bio_col_to_user_table.sql
+```sql
+alter table user add bio varchar(256) null;
+```
+```bash
+mvn flyway:migrate
+```
