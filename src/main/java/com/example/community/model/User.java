@@ -1,7 +1,9 @@
 package com.example.community.model;
 
+import lombok.Data;
 import java.util.Date;
 
+@Data
 public class User {
     private Integer id;
     private String name;
@@ -10,60 +12,5 @@ public class User {
     private Date timeCreate;
     private Date timeModified;
     private String bio;
-
-    public String getBio() {
-        return bio;
-    }
-
-    public void setBio(String bio) {
-        this.bio = bio;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAccountId() {
-        return accountId;
-    }
-
-    public void setAccountId(String accountId) {
-        this.accountId = accountId;
-    }
-
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
-
-    public Date getTimeCreate() {
-        return timeCreate;
-    }
-
-    public void setTimeCreate(Date timeCreate) {
-        this.timeCreate = timeCreate;
-    }
-
-    public Date getTimeModified() {
-        return timeModified;
-    }
-
-    public void setTimeModified(Date timeModified) {
-        this.timeModified = timeModified;
-    }
+    private String avatarUrl;
 }
